@@ -1,4 +1,4 @@
-# Proyecto Software Def
+# Proyecto Ingenieria de software
 Pequeña aplicacion web desarrollada en<br>
 # PHP7-Jscript-JQUERY2.1-PostgresSQL y HTML5<br>
 Para una compañia productora y vendedora de empandas local<br>
