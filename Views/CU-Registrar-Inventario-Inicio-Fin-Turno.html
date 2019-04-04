@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="../Boostrap/css/bootstrap.min.css">
+    <link rel="icon" href="../Imagenes/Favicon.ico">
+    <link rel="stylesheet" href="../Css/estilos.css">
+    <title>Inventario</title>
+</head>
+<body class="body">
+    <nav></nav>
+    <div class="container">
+        <section>
+            <div class="table-responsive">
+                <table class="Tabla-inventario table table-bordered table-hover table-condensed" id="Tabla-inventario">
+                    <tr class="info">
+                          <h1>
+                             <p class="Inventario">
+                                 INVENTARIO DIARIO SAN JUANITAS
+                             </p>
+                          </h1>
+                    </tr>
+                    <div class="info  form-group">
+                        <label class="success control-label col-xs-3">SELECCIONAR SEDE:</label>
+                		    <div class="col-xs-9">
+				                <select class="form-control" id="sedeInventario">
+                                    <option value="cable">Sede Cable</option>
+                                    <option value="terminal">Sede Terminal</option>
+                                    <option value="centro">Sede Centro</option>
+                                </select>
+					       </div>
+				    </div>
+                    <br>
+                    <br>
+                    <tr class="success">
+                        <th>FECHA:
+                            <script type="text/javascript">
+                                var date = new Date();
+                                var d  = date.getDate();
+                                var day = (d < 10) ? '0' + d : d;
+                                var m = date.getMonth() + 1;
+                                var month = (m < 10) ? '0' + m : m;
+                                var yy = date.getYear();
+                                var year = (yy < 1000) ? yy + 1900 : yy;
+                                document.write(day + "/" + month + "/" + year);
+                            </script>
+                        </th>
+                         <th><button type="reset" class="btn-block btn-success btn-lg" id="IniciarInventario">Iniciar Inventario <span class="glyphicon glyphicon glyphicon-pencil"></span> </button></th>
+                    </tr>
+
+                    <tr class="active">
+                       <th>Producto</th>
+                       <th>Inicio</th>
+                       <th>Entra</th>
+                       <th>Devol.</th>
+                       <th>Total</th>
+                       <th>Saldo</th>
+                       <th>Venta</th>
+                    </tr>
+                    <tr class="warning">
+                        <td>Empa. Carne</td>
+                        <td><input type="number" placeholder="Inicio" class="txtInicioECarne" id="txtInicioECarne" disabled></td>
+                        <td><input type="number" placeholder="Entra" class="txtEntraECarne" id="txtEntraECarne" disabled></td>
+                        <td><input type="number" placeholder="Devol." class="txtDevolECarne" id="txtDevolECarne"></td>
+                        <td><input type="number" placeholder="Total" class="txtTotalECarne" id="txtTotalECarne" disabled></td>
+                        <td><input type="number" placeholder="Saldo" class="txtSaldoECarne" id="txtSaldoECarne" disabled></td>
+                        <td><input type="number" placeholder="Venta" class="txtVentaECarne" id="txtVentaECarne"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Empa. Pollo</td>
+                        <td><input type="number" placeholder="Inicio" class="txtInicioEPollo" id="txtInicioEPollo" disabled></td>
+                        <td><input type="number" placeholder="Entra" class="txtEntraEPollo" id="txtEntraEPollo" disabled></td>
+                        <td><input type="number" placeholder="Devol." class="txtDevolEPollo" id="txtDevolEPollo"></td>
+                        <td><input type="number" placeholder="Total" class="txtTotalEPollo" id="txtTotalEPollo" disabled></td>
+                        <td><input type="number" placeholder="Saldo" class="txtSaldoEPollo" id="txtSaldoEPollo" disabled></td>
+                        <td><input type="number" placeholder="Venta" class="txtVentaEPollo" id="txtVentaEPollo"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Empa. Chicharrón</td>
+                        <td><input type="number" placeholder="Inicio" class="txtInicioEChicharron" id="txtInicioEChicharron" disabled></td>
+                        <td><input type="number" placeholder="Entra" class="txtEntraEChicharron" id="txtEntraEChicharron" disabled></td>
+                        <td><input type="number" placeholder="Devol." class="txtDevolEChicharron" id="txtDevolEChicharron"></td>
+                        <td><input type="number" placeholder="Total" class="txtTotalEChicharron" id="txtTotalEChicharron" disabled></td>
+                        <td><input type="number" placeholder="Saldo" class="txtSaldoEChicharron" id="txtSaldoEChicharron" disabled></td>
+                        <td><input type="number" placeholder="Venta" class="txtVentaEChicharron" id="txtVentaEChicharron"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Empa. Queso</td>
+                        <td><input type="number" placeholder="Inicio" class="txtInicioEQueso" id="txtInicioEQueso" disabled></td>
+                        <td><input type="number" placeholder="Entra" class="txtEntraEQueso" id="txtEntraEQueso" disabled></td>
+                        <td><input type="number" placeholder="Devol." class="txtDevolEQueso" id="txtDevolEQueso"></td>
+                        <td><input type="number" placeholder="Total" class="txtTotalEQueso" id="txtTotalEQueso" disabled></td>
+                        <td><input type="number" placeholder="Saldo" class="txtSaldoEQueso" id="txtSaldoEQueso" disabled></td>
+                        <td><input type="number" placeholder="Venta" class="txtVentaEQueso" id="txtVentaEQueso"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Empa. Champiñones</td>
+                        <td><input type="number" placeholder="Inicio" class="txtInicioEChampinones" id="txtInicioEChampinones" disabled></td>
+                        <td><input type="number" placeholder="Entra" class="txtEntraEChampinones" id="txtEntraEChampinones" disabled></td>
+                        <td><input type="number" placeholder="Devol." class="txtDevolEChampinones" id="txtDevolEChampinones"></td>
+                        <td><input type="number" placeholder="Total" class="txtTotalEChampinones" id="txtTotalEChampinones" disabled></td>
+                        <td><input type="number" placeholder="Saldo" class="txtSaldoEChampinones" id="txtSaldoEChampinones" disabled></td>
+                        <td><input type="number" placeholder="Venta" class="txtVentaEChampinones" id="txtVentaEChampinones"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Gaseosa 250</td>
+                        <td><input type="number" placeholder="Inicio" class="txtInicioGaseosa250" id="txtInicioGaseosa250" disabled></td>
+                        <td><input type="number" placeholder="Entra" class="txtEntraGaseosa250" id="txtEntraGaseosa250" disabled></td>
+                        <td><input type="number" placeholder="Devol." class="txtDevolGaseosa250" id="txtDevolGaseosa250"></td>
+                        <td><input type="number" placeholder="Total" class="txtTotalGaseosa250" id="txtTotalGaseosa250" disabled></td>
+                        <td><input type="number" placeholder="Saldo" class="txtSaldoGaseosa250" id="txtSaldoGaseosa250" disabled></td>
+                        <td><input type="number" placeholder="Venta" class="txtVentaGaseosa250" id="txtVentaGaseosa250"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Gaseosa 350</td>
+                        <td><input type="number" placeholder="Inicio" class="txtInicioGaseosa350" id="txtInicioGaseosa350" disabled></td>
+                        <td><input type="number" placeholder="Entra" class="txtEntraGaseosa350" id="txtEntraGaseosa350" disabled></td>
+                        <td><input type="number" placeholder="Devol." class="txtDevolGaseosa350" id="txtDevolGaseosa350"></td>
+                        <td><input type="number" placeholder="Total" class="txtTotalGaseosa350" id="txtTotalGaseosa350" disabled></td>
+                        <td><input type="number" placeholder="Saldo" class="txtSaldoGaseosa350" id="txtSaldoGaseosa350" disabled></td>
+                        <td><input type="number" placeholder="Venta" class="txtVentaGaseosa350" id="txtVentaGaseosa350"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Jugo hit 250</td>
+                        <td><input type="number" placeholder="Inicio" class="txtInicioJugoHit250" id="txtInicioJugoHit250" disabled></td>
+                        <td><input type="number" placeholder="Entra" class="txtEntraJugoHit250" id="txtEntraJugoHit250" disabled></td>
+                        <td><input type="number" placeholder="Devol." class="txtDevolJugoHit250" id="txtDevolJugoHit250"></td>
+                        <td><input type="number" placeholder="Total" class="txtTotalJugoHit250" id="txtTotalJugoHit250" disabled></td>
+                        <td><input type="number" placeholder="Saldo" class="txtSaldoJugoHit250" id="txtSaldoJugoHit250" disabled></td>
+                        <td><input type="number" placeholder="Venta" class="txtVentaJugoHit250" id="txtVentaJugoHit250"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Jugo hit 500</td>
+                        <td><input type="number" placeholder="Inicio" class="txtInicioJugoHit500" id="txtInicioJugoHit500" disabled></td>
+                        <td><input type="number" placeholder="Entra" class="txtEntraJugoHit500" id="txtEntraJugoHit500" disabled></td>
+                        <td><input type="number" placeholder="Devol." class="txtDevolJugoHit500" id="txtDevolJugoHit500"></td>
+                        <td><input type="number" placeholder="Total" class="txtTotalJugoHit500" id="txtTotalJugoHit500" disabled></td>
+                        <td><input type="number" placeholder="Saldo" class="txtSaldoJugoHit500" id="txtSaldoJugoHit500" disabled></td>
+                        <td><input type="number" placeholder="Venta" class="txtVentaJugoHit500" id="txtVentaJugoHit500"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>H2O</td>
+                        <td><input type="number" placeholder="Inicio" class="txtInicioH2O" id="txtInicioH2O" disabled></td>
+                        <td><input type="number" placeholder="Entra" class="txtEntraH2O" id="txtEntraH2O" disabled></td>
+                        <td><input type="number" placeholder="Devol." class="txtDevolH2O" id="txtDevolH2O"></td>
+                        <td><input type="number" placeholder="Total" class="txtTotalH2O" id="txtTotalH2O" disabled></td>
+                        <td><input type="number" placeholder="Saldo" class="txtSaldoH2O" id="txtSaldoH2O" disabled></td>
+                        <td><input type="number" placeholder="Venta" class="txtVentaH2O" id="txtVentaH2O"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Gaseosa 2 Lt.</td>
+                        <td><input type="number" placeholder="Inicio" class="txtInicioGaseosa2LT" id="txtInicioGaseosa2LT" disabled></td>
+                        <td><input type="number" placeholder="Entra" class="txtEntraGaseosa2LT" id="txtEntraGaseosa2LT" disabled></td>
+                        <td><input type="number" placeholder="Devol." class="txtDevolGaseosa2LT" id="txtDevolGaseosa2LT"></td>
+                        <td><input type="number" placeholder="Total" class="txtTotalGaseosa2LT" id="txtTotalGaseosa2LT" disabled></td>
+                        <td><input type="number" placeholder="Saldo" class="txtSaldoGaseosa2LT" id="txtSaldoGaseosa2LT" disabled></td>
+                        <td><input type="number" placeholder="Venta" class="txtVentaGaseosa2LT" id="txtVentaGaseosa2LT"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Fuze tea</td>
+                        <td><input type="number" placeholder="Inicio" class="txtInicioFuzetea" id="txtInicioFuzetea" disabled></td>
+                        <td><input type="number" placeholder="Entra" class="txtEntraFuzetea" id="txtEntraFuzetea" disabled></td>
+                        <td><input type="number" placeholder="Devol." class="txtDevolFuzetea" id="txtDevolFuzetea"></td>
+                        <td><input type="number" placeholder="Total" class="txtTotalFuzetea" id="txtTotalFuzetea" disabled></td>
+                        <td><input type="number" placeholder="Saldo" class="txtSaldoFuzetea" id="txtSaldoFuzetea" disabled></td>
+                        <td><input type="number" placeholder="Venta" class="txtVentaFuzetea" id="txtVentaFuzetea"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Flexi pequeña</td>
+                        <td><input type="number" placeholder="Inicio" class="txtInicioFlexipequena" id="txtInicioFlexipequena" disabled></td>
+                        <td><input type="number" placeholder="Entra" class="txtEntraFlexipequena" id="txtEntraFlexipequena" disabled></td>
+                        <td><input type="number" placeholder="Devol." class="txtDevolFlexipequena" id="txtDevolFlexipequena"></td>
+                        <td><input type="number" placeholder="Total" class="txtTotalFlexipequena" id="txtTotalFlexipequena" disabled></td>
+                        <td><input type="number" placeholder="Saldo" class="txtSaldoFlexipequena" id="txtSaldoFlexipequena" disabled></td>
+                        <td><input type="number" placeholder="Venta" class="txtVentaFlexipequena" id="txtVentaFlexipequena"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Pony pet</td>
+                        <td><input type="number" placeholder="Inicio" class="txtInicioPonypet" id="txtInicioPonypet" disabled></td>
+                        <td><input type="number" placeholder="Entra" class="txtEntraPonypet" id="txtEntraPonypet" disabled></td>
+                        <td><input type="number" placeholder="Devol." class="txtDevolPonypet" id="txtDevolPonypet"></td>
+                        <td><input type="number" placeholder="Total" class="txtTotalPonypet" id="txtTotalPonypet" disabled></td>
+                        <td><input type="number" placeholder="Saldo" class="txtSaldoPonypet" id="txtSaldoPonypet" disabled></td>
+                        <td><input type="number" placeholder="Venta" class="txtVentaPonypet" id="txtVentaPonypet"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Pony mini</td>
+                        <td><input type="number" placeholder="Inicio" class="txtInicioPonymini" id="txtInicioPonymini" disabled></td>
+                        <td><input type="number" placeholder="Entra" class="txtEntraPonymini" id="txtEntraPonymini" disabled></td>
+                        <td><input type="number" placeholder="Devol." class="txtDevolPonymini" id="txtDevolPonymini"></td>
+                        <td><input type="number" placeholder="Total" class="txtTotalPonymini" id="txtTotalPonymini" disabled></td>
+                        <td><input type="number" placeholder="Saldo" class="txtSaldoPonymini" id="txtSaldoPonymini" disabled></td>
+                        <td><input type="number" placeholder="Venta" class="txtVentaPonymini" id="txtVentaPonymini"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Agua</td>
+                        <td><input type="number" placeholder="Inicio" class="txtInicioAgua" id="txtInicioAgua" disabled></td>
+                        <td><input type="number" placeholder="Entra" class="txtEntraAgua" id="txtEntraAgua" disabled></td>
+                        <td><input type="number" placeholder="Devol." class="txtDevolAgua" id="txtDevolAgua"></td>
+                        <td><input type="number" placeholder="Total" class="txtTotalAgua" id="txtTotalAgua" disabled></td>
+                        <td><input type="number" placeholder="Saldo" class="txtSaldoAgua" id="txtSaldoAgua" disabled></td>
+                        <td><input type="number" placeholder="Venta" class="txtVentaAgua" id="txtVentaAgua"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Chiclets</td>
+                        <td><input type="number" placeholder="Inicio" class="txtInicioChiclets" id="txtInicioChiclets" disabled></td>
+                        <td><input type="number" placeholder="Entra" class="txtEntraChiclets" id="txtEntraChiclets" disabled></td>
+                        <td><input type="number" placeholder="Devol." class="txtDevolChiclets" id="txtDevolChiclets"></td>
+                        <td><input type="number" placeholder="Total" class="txtTotalChiclets" id="txtTotalChiclets" disabled></td>
+                        <td><input type="number" placeholder="Saldo" class="txtSaldoChiclets" id="txtSaldoChiclets" disabled></td>
+                        <td><input type="number" placeholder="Venta" class="txtVentaChiclets" id="txtVentaChiclets"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Leche</td>
+                        <td><input type="number" placeholder="Inicio" class="txtInicioLeche" id="txtInicioLeche" disabled></td>
+                        <td><input type="number" placeholder="Entra" class="txtEntraLeche" id="txtEntraLeche" disabled></td>
+                        <td><input type="number" placeholder="Devol." class="txtDevolLeche" id="txtDevolLeche"></td>
+                        <td><input type="number" placeholder="Total" class="txtTotalLeche" id="txtTotalLeche" disabled></td>
+                        <td><input type="number" placeholder="Saldo" class="txtSaldoLeche" id="txtSaldoLeche" disabled></td>
+                        <td><input type="number" placeholder="Venta" class="txtVentaLeche" id="txtVentaLeche"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Pulpas</td>
+                        <td><input type="number" placeholder="Inicio" class="txtInicioPulpas" id="txtInicioPulpas" disabled></td>
+                        <td><input type="number" placeholder="Entra" class="txtEntraPulpas" id="txtEntraPulpas" disabled></td>
+                        <td><input type="number" placeholder="Devol." class="txtDevolPulpas" id="txtDevolPulpas"></td>
+                        <td><input type="number" placeholder="Total" class="txtTotalPulpas" id="txtTotalPulpas" disabled></td>
+                        <td><input type="number" placeholder="Saldo" class="txtSaldoPulpas" id="txtSaldoPulpas" disabled></td>
+                        <td><input type="number" placeholder="Venta" class="txtVentaPulpas" id="txtVentaPulpas"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Avena</td>
+                        <td><input type="number" placeholder="Inicio" class="txtInicioAvena" id="txtInicioAvena" disabled></td>
+                        <td><input type="number" placeholder="Entra" class="txtEntraAvena" id="txtEntraAvena" disabled></td>
+                        <td><input type="number" placeholder="Devol." class="txtDevolAvena" id="txtDevolAvena"></td>
+                        <td><input type="number" placeholder="Total" class="txtTotalAvena" id="txtTotalAvena" disabled></td>
+                        <td><input type="number" placeholder="Saldo" class="txtSaldoAvena" id="txtSaldoAvena" disabled></td>
+                        <td><input type="number" placeholder="Venta" class="txtVentaAvena" id="txtVentaAvena"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Milo caliente</td>
+                        <td><input type="number" placeholder="Inicio" class="txtInicioMilocaliente" id="txtInicioMilocaliente" disabled></td>
+                        <td><input type="number" placeholder="Entra" class="txtEntraMilocaliente" id="txtEntraMilocaliente" disabled></td>
+                        <td><input type="number" placeholder="Devol." class="txtDevolMilocaliente" id="txtDevolMilocaliente"></td>
+                        <td><input type="number" placeholder="Total" class="txtTotalMilocaliente" id="txtTotalMilocaliente" disabled></td>
+                        <td><input type="number" placeholder="Saldo" class="txtSaldoMilocaliente" id="txtSaldoMilocaliente" disabled></td>
+                        <td><input type="number" placeholder="Venta" class="txtVentaMilocaliente" id="txtVentaMilocaliente"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Pintado</td>
+                        <td><input type="number" placeholder="Inicio" class="txtInicioPintado" id="txtInicioPintado" disabled></td>
+                        <td><input type="number" placeholder="Entra" class="txtEntraPintado" id="txtEntraPintado" disabled></td>
+                        <td><input type="number" placeholder="Devol." class="txtDevolPintado" id="txtDevolPintado"></td>
+                        <td><input type="number" placeholder="Total" class="txtTotalPintado" id="txtTotalPintado" disabled></td>
+                        <td><input type="number" placeholder="Saldo" class="txtSaldoPintado" id="txtSaldoPintado" disabled></td>
+                        <td><input type="number" placeholder="Venta" class="txtVentaPintado" id="txtVentaPintado"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Pintadito</td>
+                        <td><input type="number" placeholder="Inicio" class="txtInicioPintadito" id="txtInicioPintadito" disabled></td>
+                        <td><input type="number" placeholder="Entra" class="txtEntraPintadito" id="txtEntraPintadito" disabled></td>
+                        <td><input type="number" placeholder="Devol." class="txtDevolPintadito" id="txtDevolPintadito"></td>
+                        <td><input type="number" placeholder="Total" class="txtTotalPintadito" id="txtTotalPintadito" disabled></td>
+                        <td><input type="number" placeholder="Saldo" class="txtSaldoPintadito" id="txtSaldoPintadito" disabled></td>
+                        <td><input type="number" placeholder="Venta" class="txtVentaPintadito" id="txtVentaPintadito"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Capuccino original</td>
+                        <td><input type="number" placeholder="Inicio" class="txtInicioCapuccinooriginal" id="txtInicioCapuccinooriginal" disabled></td>
+                        <td><input type="number" placeholder="Entra" class="txtEntraCapuccinooriginal" id="txtEntraCapuccinooriginal" disabled></td>
+                        <td><input type="number" placeholder="Devol." class="txtDevolCapuccinooriginal" id="txtDevolCapuccinooriginal"></td>
+                        <td><input type="number" placeholder="Total" class="txtTotalCapuccinooriginal" id="txtTotalCapuccinooriginal" disabled></td>
+                        <td><input type="number" placeholder="Saldo" class="txtSaldoCapuccinooriginal" id="txtSaldoCapuccinooriginal" disabled></td>
+                        <td><input type="number" placeholder="Venta" class="txtVentaCapuccinooriginal" id="txtVentaCapuccinooriginal"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Capuccino Vainilla</td>
+                        <td><input type="number" placeholder="Inicio" class="txtInicioCapuccinoVainilla" id="txtInicioCapuccinoVainilla" disabled></td>
+                        <td><input type="number" placeholder="Entra" class="txtEntraCapuccinoVainilla" id="txtEntraCapuccinoVainilla" disabled></td>
+                        <td><input type="number" placeholder="Devol." class="txtDevolCapuccinoVainilla" id="txtDevolCapuccinoVainilla"></td>
+                        <td><input type="number" placeholder="Total" class="txtTotalCapuccinoVainilla" id="txtTotalCapuccinoVainilla" disabled></td>
+                        <td><input type="number" placeholder="Saldo" class="txtSaldoCapuccinoVainilla" id="txtSaldoCapuccinoVainilla" disabled></td>
+                        <td><input type="number" placeholder="Venta" class="txtVentaCapuccinoVainilla" id="txtVentaCapuccinoVainilla"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Tinto</td>
+                        <td><input type="number" placeholder="Inicio" class="txtInicioTinto" id="txtInicioTinto" disabled></td>
+                        <td><input type="number" placeholder="Entra" class="txtEntraTinto" id="txtEntraTinto" disabled></td>
+                        <td><input type="number" placeholder="Devol." class="txtDevolTinto" id="txtDevolTinto"></td>
+                        <td><input type="number" placeholder="Total" class="txtTotalTinto" id="txtTotalTinto" disabled></td>
+                        <td><input type="number" placeholder="Saldo" class="txtSaldoTinto" id="txtSaldoTinto" disabled></td>
+                        <td><input type="number" placeholder="Venta" class="txtVentaTinto" id="txtVentaTinto"></td>
+                    </tr>
+                    <tr class="warning">
+                        <td>Mokaccino</td>
+                        <td><input type="number" placeholder="Inicio" class="txtInicioMokaccino" id="txtInicioMokaccino" disabled></td>
+                        <td><input type="number" placeholder="Entra" class="txtEntraMokaccino" id="txtEntraMokaccino" disabled></td>
+                        <td><input type="number" placeholder="Devol." class="txtDevolMokaccino" id="txtDevolMokaccino"></td>
+                        <td><input type="number" placeholder="Total" class="txtTotalMokaccino" id="txtTotalMokaccino" disabled></td>
+                        <td><input type="number" placeholder="Saldo" class="txtSaldoMokaccino" id="txtSaldoMokaccino" disabled></td>
+                        <td><input type="number" placeholder="Venta" class="txtVentaMokaccino" id="txtVentaMokaccino"></td>
+                    </tr>
+                </table>
+                <div class="form-bottom">
+                    <button type="button" class="btn-block btn-danger btn-lg" id="GuardarInventario">Guardar <span class="glyphicon glyphicon-floppy-saved"></span> </button>
+                </div>
+          </div>
+       </section>
+    </div>
+    <script src="../Jquery/jquery-1.11.1.min.js" ></script>
+    <script src="../Boostrap/js/bootstrap.min.js"></script>
+    <script src="../Js/JS_Inventario.js" type="text/javascript" language="javascript1.5"></script>
+</body>
+</html>
